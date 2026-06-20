@@ -525,6 +525,7 @@ let currentLang = 'ja';
 
 function setLang(lang) {
   currentLang = lang;
+  localStorage.setItem('lang', lang);
   document.getElementById('langOverlay').style.display = 'none';
   document.getElementById('mainPage').classList.add('active');
   applyTranslations(lang);
@@ -543,6 +544,9 @@ function applyTranslations(lang) {
   });
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
 }
+
+const savedLang = localStorage.getItem('lang');
+if (savedLang && i18n[savedLang]) setLang(savedLang);
 </script>
 </body>
 </html>
