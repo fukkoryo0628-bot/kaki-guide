@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>牡蠣の焼き方 | How to Grill Oysters</title>
+  <meta name="description" content="牡蠣の焼き方ガイド / Oyster grilling guide">
+  <style>
+    :root {
+      --ocean: #0d4f6e;
+      --ocean-light: #1a6e94;
+      --ocean-pale: #e8f4f9;
+      --amber: #e07b10;
+      --amber-light: #fef3e2;
+      --red: #dc2626;
+      --red-light: #fef2f2;
+      --red-border: #fca5a5;
+      --green: #16a34a;
+      --green-light: #f0fdf4;
+      --text: #1a1a1a;
+      --text-mid: #4a4a4a;
+      --text-light: #888;
+      --border: #e5e7eb;
+      --white: #ffffff;
+      --bg: #f8f9fa;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ===== LANGUAGE SELECTOR ===== */
+    .lang-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #0d4f6e 0%, #1a2a3a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 32px 24px;
+      gap: 32px;
+    }
+
+    .lang-overlay .oyster-icon {
+      font-size: 72px;
+      line-height: 1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+
+    .lang-overlay h1 {
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .lang-overlay .subtitle {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+    }
+
+    .lang-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 14px;
+      padding: 20px 12px;
+      color: white;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-btn:active {
+      transform: scale(0.96);
+      background: rgba(255,255,255,0.22);
+    }
+
+    .lang-btn .flag {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .lang-btn .lang-name {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .lang-btn .lang-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ===== MAIN PAGE ===== */
+    .main-page { display: none; }
+    .main-page.active { display: block; }
+
+    /* Header */
+    .header {
+      background: var(--ocean);
+      color: white;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+    }
+
+    .header-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .lang-switch-btn {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, var(--ocean) 0%, var(--ocean-light) 100%);
+      color: white;
+      padding: 36px 20px 40px;
+      text-align: center;
+    }
+
+    .hero .hero-icon { font-size: 60px; margin-bottom: 14px; }
+
+    .hero h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+    }
+
+    /* Section */
+    .section {
+      padding: 28px 16px 12px;
+    }
+
+    .section-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--ocean);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, var(--ocean), transparent);
+      border-radius: 2px;
+    }
+
+    /* Step Cards */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0 16px 8px;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .step-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--ocean-pale);
+    }
+
+    .step-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--ocean-pale) 0%, #d0e8f4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--ocean);
+    }
+
+    .step-img-placeholder .ph-icon { font-size: 48px; }
+    .step-img-placeholder .ph-text { font-size: 12px; color: var(--text-light); }
+
+    .step-body {
+      padding: 16px 18px 20px;
+    }
+
+    .step-number-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--ocean);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-icon { font-size: 24px; }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .step-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-top: 6px;
+    }
+
+    /* Danger / Warning tag on steps */
+    .step-card.danger .step-num { background: var(--red); }
+
+    .step-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--red-light);
+      color: var(--red);
+      border: 1px solid var(--red-border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    /* Warning Section */
+    .warnings {
+      padding: 0 16px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .warn-card {
+      background: var(--red-light);
+      border: 1.5px solid var(--red-border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .warn-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    .warn-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1.55;
+    }
+
+    .warn-sub {
+      font-size: 13px;
+      font-weight: 400;
+      color: #b91c1c;
+      margin-top: 3px;
+      line-height: 1.55;
+    }
+
+    /* Supplies */
+    .supplies {
+      padding: 0 16px 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .supply-card {
+      background: var(--amber-light);
+      border: 1px solid #fcd38e;
+      border-radius: 14px;
+      padding: 16px 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .supply-card .s-icon { font-size: 34px; }
+    .supply-card .s-name { font-size: 14px; font-weight: 700; color: var(--amber); }
+
+    /* Staff CTA */
+    .staff-cta {
+      margin: 12px 16px 8px;
+      background: var(--green-light);
+      border: 1.5px solid #86efac;
+      border-radius: 16px;
+      padding: 22px 20px;
+      text-align: center;
+    }
+
+    .staff-cta .cta-icon { font-size: 40px; margin-bottom: 10px; }
+
+    .staff-cta p {
+      font-size: 16px;
+      font-weight: 700;
+      color: #15803d;
+      line-height: 1.65;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--ocean);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 13px;
+      margin-top: 24px;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- ===== LANGUAGE OVERLAY ===== -->
+<div class="lang-overlay" id="langOverlay">
+  <div class="oyster-icon">🦪</div>
+  <h1 id="overlay-title">言語を選んでください<br>Please select your language</h1>
+  <p class="subtitle" id="overlay-sub">牡蠣の焼き方ガイド<br>Oyster Grilling Guide<br>烤牡蛎指南 / 굴 굽기 안내</p>
+  <div class="lang-buttons">
+    <button class="lang-btn" onclick="setLang('ja')">
+      <span class="flag">🇯🇵</span>
+      <span class="lang-name">日本語</span>
+      <span class="lang-sub">Japanese</span>
+    </button>
+    <button class="lang-btn" onclick="setLang('en')">
+      <span class="flag">🇺🇸</span>
+      <span class="lang-name">English</span>
+      <span class="lang-sub">英語</span>
+    </button>
+    <button class="lang-btn" onclick="setLang('zh')">
+      <span class="flag">🇨🇳</span>
+      <span class="lang-name">中文</span>
+      <span class="lang-sub">Chinese</span>
+    </button>
+    <button class="lang-btn" onclick="setLang('ko')">
+      <span class="flag">🇰🇷</span>
+      <span class="lang-name">한국어</span>
+      <span class="lang-sub">Korean</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== MAIN PAGE ===== -->
+<div class="main-page" id="mainPage">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-title" data-i18n="header-title">🦪 牡蠣の焼き方</div>
+      <button class="lang-switch-btn" onclick="showLangOverlay()" data-i18n="lang-btn">🌐 言語</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-icon">🔥🦪</div>
+    <h2 data-i18n="hero-title">牡蠣の焼き方</h2>
+    <p data-i18n="hero-sub">安全においしく楽しむための手順をご案内します</p>
+  </section>
+
+  <!-- 必要なもの -->
+  <div class="section">
+    <div class="section-title" data-i18n="supplies-title">🧰 必要なもの</div>
+  </div>
+  <div class="supplies">
+    <div class="supply-card">
+      <span class="s-icon">🧤</span>
+      <span class="s-name" data-i18n="supply-1">軍手</span>
+    </div>
+    <div class="supply-card">
+      <span class="s-icon">🥄</span>
+      <span class="s-name" data-i18n="supply-2">トング</span>
+    </div>
+    <div class="supply-card">
+      <span class="s-icon">🔪</span>
+      <span class="s-name" data-i18n="supply-3">ナイフ</span>
+    </div>
+    <div class="supply-card">
+      <span class="s-icon">🍋</span>
+      <span class="s-name" data-i18n="supply-4">レモン・醤油</span>
+    </div>
+  </div>
+
+  <!-- 手順 -->
+  <div class="section">
+    <div class="section-title" data-i18n="steps-title">📋 焼き方の手順</div>
+  </div>
+  <div class="steps">
+
+    <!-- Step 1 -->
+    <div class="step-card">
+      <img class="step-img" src="images/step1.jpg" alt="Step 1"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🧤</span>
+        <span class="ph-text">step1.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">1</div>
+          <span class="step-icon">🧤</span>
+          <div class="step-title" data-i18n="step1-title">軍手をつける</div>
+        </div>
+        <p class="step-desc" data-i18n="step1-desc">必ず軍手をつけてから作業を始めてください。熱い殻から手を守ります。</p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <img class="step-img" src="images/step2.jpg" alt="Step 2"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🦪</span>
+        <span class="ph-text">step2.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">2</div>
+          <span class="step-icon">🦪</span>
+          <div class="step-title" data-i18n="step2-title">平らな面を上にして網に置く</div>
+        </div>
+        <p class="step-desc" data-i18n="step2-desc">牡蠣の平らな面（平べったい側）を上にして、網の上に置いてください。汁がこぼれにくくなります。</p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card">
+      <img class="step-img" src="images/step3.jpg" alt="Step 3"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🔥</span>
+        <span class="ph-text">step3.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">3</div>
+          <span class="step-icon">🔥</span>
+          <div class="step-title" data-i18n="step3-title">殻が開くまで焼く</div>
+        </div>
+        <p class="step-desc" data-i18n="step3-desc">そのまま約5〜8分焼きます。殻が少し開いてきたら焼き上がりのサインです。</p>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card danger">
+      <img class="step-img" src="images/step4.jpg" alt="Step 4"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🥄</span>
+        <span class="ph-text">step4.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">4</div>
+          <span class="step-icon">🥄</span>
+          <div class="step-title" data-i18n="step4-title">トングで取り出す</div>
+        </div>
+        <p class="step-desc" data-i18n="step4-desc">殻が開いたら、必ずトングを使って取り出してください。</p>
+        <span class="step-tag">⚠️ <span data-i18n="tag-hot">とても熱い！</span></span>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-card danger">
+      <img class="step-img" src="images/step5.jpg" alt="Step 5"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🚫</span>
+        <span class="ph-text">step5.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">5</div>
+          <span class="step-icon">🚫</span>
+          <div class="step-title" data-i18n="step5-title">素手で触らない！</div>
+        </div>
+        <p class="step-desc" data-i18n="step5-desc">殻や中の汁は非常に熱くなっています。素手で絶対に触らないでください。</p>
+        <span class="step-tag">⚠️ <span data-i18n="tag-danger">危険！</span></span>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step-card">
+      <img class="step-img" src="images/step6.jpg" alt="Step 6"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🔪</span>
+        <span class="ph-text">step6.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">6</div>
+          <span class="step-icon">🔪</span>
+          <div class="step-title" data-i18n="step6-title">ナイフで殻を開ける</div>
+        </div>
+        <p class="step-desc" data-i18n="step6-desc">殻の隙間にナイフを差し込み、こじ開けてください。軍手をしたまま行いましょう。</p>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step-card">
+      <img class="step-img" src="images/step7.jpg" alt="Step 7"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">✅</span>
+        <span class="ph-text">step7.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">7</div>
+          <span class="step-icon">✅</span>
+          <div class="step-title" data-i18n="step7-title">中まで火が通っているか確認</div>
+        </div>
+        <p class="step-desc" data-i18n="step7-desc">牡蠣の身がぷっくりと膨らみ、縁が縮れていれば火が通っています。透明なままの場合は生焼けです。</p>
+      </div>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="step-card">
+      <img class="step-img" src="images/step8.jpg" alt="Step 8"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-icon">🍋</span>
+        <span class="ph-text">step8.jpg</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">8</div>
+          <span class="step-icon">🍋</span>
+          <div class="step-title" data-i18n="step8-title">レモンや醤油をかけて食べる</div>
+        </div>
+        <p class="step-desc" data-i18n="step8-desc">お好みでレモンを絞ったり、醤油をかけてお召し上がりください。熱いうちにどうぞ！</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 注意事項 -->
+  <div class="section">
+    <div class="section-title" data-i18n="warn-title">⚠️ 注意事項</div>
+  </div>
+  <div class="warnings">
+
+    <div class="warn-card">
+      <span class="warn-icon">🔥</span>
+      <div>
+        <div class="warn-text" data-i18n="warn1-title">殻や汁がとても熱い！</div>
+        <div class="warn-sub" data-i18n="warn1-sub">殻・汁ともに100℃近くなります。必ず軍手を着用してください。</div>
+      </div>
+    </div>
+
+    <div class="warn-card">
+      <span class="warn-icon">💦</span>
+      <div>
+        <div class="warn-text" data-i18n="warn2-title">汁が飛び散ることがあります！</div>
+        <div class="warn-sub" data-i18n="warn2-sub">焼いているときに汁が急に飛び出すことがあります。顔を近づけないでください。</div>
+      </div>
+    </div>
+
+    <div class="warn-card">
+      <span class="warn-icon">🚫</span>
+      <div>
+        <div class="warn-text" data-i18n="warn3-title">生焼けでは食べないでください！</div>
+        <div class="warn-sub" data-i18n="warn3-sub">中まで十分に火を通してから食べてください。食中毒の原因になります。</div>
+      </div>
+    </div>
+
+    <div class="warn-card">
+      <span class="warn-icon">👧</span>
+      <div>
+        <div class="warn-text" data-i18n="warn4-title">子どもだけで焼かせないでください！</div>
+        <div class="warn-sub" data-i18n="warn4-sub">火・熱い殻・ナイフなど危険なものがあります。必ず大人が付き添ってください。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- スタッフを呼ぶ -->
+  <div class="section">
+    <div class="section-title" data-i18n="staff-section-title">🙋 わからないときは</div>
+  </div>
+  <div style="padding: 0 16px 8px;">
+    <div class="warn-card" style="background:#fff7ed;border-color:#fed7aa;">
+      <span class="warn-icon">📢</span>
+      <div>
+        <div class="warn-text" style="color:#c2410c;" data-i18n="staff-warn-title">迷ったらスタッフを呼んでください！</div>
+        <div class="warn-sub" style="color:#9a3412;" data-i18n="staff-warn-sub">遠慮なくお声がけください。すぐにお手伝いします。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- スタッフへ声かけ -->
+  <div class="staff-cta">
+    <div class="cta-icon">🙋‍♀️</div>
+    <p data-i18n="staff-cta">ご不明な点がございましたら、<br>スタッフまでお気軽にお声かけください。</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>🦪 Kaki-Goya Grilling Guide</p>
+  </div>
+
+</div><!-- /main-page -->
+
+<script>
+const i18n = {
+  ja: {
+    "header-title": "🦪 牡蠣の焼き方",
+    "lang-btn": "🌐 言語",
+    "hero-title": "牡蠣の焼き方",
+    "hero-sub": "安全においしく楽しむための手順をご案内します",
+    "supplies-title": "🧰 必要なもの",
+    "supply-1": "軍手",
+    "supply-2": "トング",
+    "supply-3": "ナイフ",
+    "supply-4": "レモン・醤油",
+    "steps-title": "📋 焼き方の手順",
+    "step1-title": "軍手をつける",
+    "step1-desc": "必ず軍手をつけてから作業を始めてください。熱い殻から手を守ります。",
+    "step2-title": "平らな面を上にして網に置く",
+    "step2-desc": "牡蠣の平らな面（平べったい側）を上にして、網の上に置いてください。汁がこぼれにくくなります。",
+    "step3-title": "殻が開くまで焼く",
+    "step3-desc": "そのまま約5〜8分焼きます。殻が少し開いてきたら焼き上がりのサインです。",
+    "step4-title": "トングで取り出す",
+    "step4-desc": "殻が開いたら、必ずトングを使って取り出してください。",
+    "step5-title": "素手で触らない！",
+    "step5-desc": "殻や中の汁は非常に熱くなっています。素手で絶対に触らないでください。",
+    "step6-title": "ナイフで殻を開ける",
+    "step6-desc": "殻の隙間にナイフを差し込み、こじ開けてください。軍手をしたまま行いましょう。",
+    "step7-title": "中まで火が通っているか確認",
+    "step7-desc": "牡蠣の身がぷっくりと膨らみ、縁が縮れていれば火が通っています。透明なままの場合は生焼けです。",
+    "step8-title": "レモンや醤油をかけて食べる",
+    "step8-desc": "お好みでレモンを絞ったり、醤油をかけてお召し上がりください。熱いうちにどうぞ！",
+    "tag-hot": "とても熱い！",
+    "tag-danger": "危険！",
+    "warn-title": "⚠️ 注意事項",
+    "warn1-title": "殻や汁がとても熱い！",
+    "warn1-sub": "殻・汁ともに100℃近くなります。必ず軍手を着用してください。",
+    "warn2-title": "汁が飛び散ることがあります！",
+    "warn2-sub": "焼いているときに汁が急に飛び出すことがあります。顔を近づけないでください。",
+    "warn3-title": "生焼けでは食べないでください！",
+    "warn3-sub": "中まで十分に火を通してから食べてください。食中毒の原因になります。",
+    "warn4-title": "子どもだけで焼かせないでください！",
+    "warn4-sub": "火・熱い殻・ナイフなど危険なものがあります。必ず大人が付き添ってください。",
+    "staff-section-title": "🙋 わからないときは",
+    "staff-warn-title": "迷ったらスタッフを呼んでください！",
+    "staff-warn-sub": "遠慮なくお声がけください。すぐにお手伝いします。",
+    "staff-cta": "ご不明な点がございましたら、\nスタッフまでお気軽にお声かけください。",
+  },
+  en: {
+    "header-title": "🦪 How to Grill Oysters",
+    "lang-btn": "🌐 Language",
+    "hero-title": "How to Grill Oysters",
+    "hero-sub": "Follow these steps to safely enjoy delicious grilled oysters",
+    "supplies-title": "🧰 What You'll Need",
+    "supply-1": "Work Gloves",
+    "supply-2": "Tongs",
+    "supply-3": "Knife",
+    "supply-4": "Lemon / Soy Sauce",
+    "steps-title": "📋 Grilling Steps",
+    "step1-title": "Put on Work Gloves",
+    "step1-desc": "Always put on work gloves before you start. They protect your hands from the hot shells.",
+    "step2-title": "Place Flat Side Up on Grill",
+    "step2-desc": "Place the oyster with the flat (flatter) side facing UP on the grill. This prevents the juices from spilling out.",
+    "step3-title": "Grill Until Shell Opens",
+    "step3-desc": "Grill for about 5–8 minutes. When the shell starts to open slightly, the oyster is ready.",
+    "step4-title": "Remove with Tongs",
+    "step4-desc": "Once the shell opens, use tongs to carefully remove the oyster from the grill.",
+    "step5-title": "Do NOT Touch with Bare Hands!",
+    "step5-desc": "The shell and juices are extremely hot. Never touch them with your bare hands.",
+    "step6-title": "Open the Shell with a Knife",
+    "step6-desc": "Insert the knife into the gap of the shell and pry it open. Keep your gloves on while doing this.",
+    "step7-title": "Check That It's Fully Cooked",
+    "step7-desc": "The oyster is ready when the meat is plump and the edges are curled. If it still looks translucent, it needs more cooking.",
+    "step8-title": "Add Lemon or Soy Sauce and Enjoy!",
+    "step8-desc": "Squeeze lemon juice or add a dash of soy sauce to taste. Enjoy while it's hot!",
+    "tag-hot": "Very Hot!",
+    "tag-danger": "Danger!",
+    "warn-title": "⚠️ Safety Warnings",
+    "warn1-title": "Shells and juices are extremely hot!",
+    "warn1-sub": "The shell and liquid can reach nearly 100°C. Always wear work gloves.",
+    "warn2-title": "Hot juice may splatter!",
+    "warn2-sub": "Juice can suddenly shoot out while grilling. Do not lean your face over the grill.",
+    "warn3-title": "Do not eat undercooked oysters!",
+    "warn3-sub": "Make sure the oyster is fully cooked before eating. Undercooked oysters can cause food poisoning.",
+    "warn4-title": "Do not let children grill alone!",
+    "warn4-sub": "There are fire, hot shells, and sharp knives. An adult must always supervise.",
+    "staff-section-title": "🙋 Need Help?",
+    "staff-warn-title": "Call a staff member if you're unsure!",
+    "staff-warn-sub": "Don't hesitate to ask. We're happy to help right away.",
+    "staff-cta": "If you have any questions,\nplease feel free to ask a staff member.",
+  },
+  zh: {
+    "header-title": "🦪 烤牡蛎指南",
+    "lang-btn": "🌐 语言",
+    "hero-title": "烤牡蛎指南",
+    "hero-sub": "请按照以下步骤安全享用美味烤牡蛎",
+    "supplies-title": "🧰 所需物品",
+    "supply-1": "工作手套",
+    "supply-2": "夹子",
+    "supply-3": "刀",
+    "supply-4": "柠檬・酱油",
+    "steps-title": "📋 烤牡蛎步骤",
+    "step1-title": "戴上工作手套",
+    "step1-desc": "开始操作前，请务必戴上工作手套，保护双手免受高温贝壳烫伤。",
+    "step2-title": "平面朝上放在烤网上",
+    "step2-desc": "将牡蛎较平的一面朝上放在烤网上，这样可以防止汁水溢出。",
+    "step3-title": "烤至贝壳开口",
+    "step3-desc": "烤约5〜8分钟，当贝壳稍微裂开时，表示已经烤好了。",
+    "step4-title": "用夹子取出",
+    "step4-desc": "贝壳开口后，请务必使用夹子将牡蛎取出。",
+    "step5-title": "禁止用手直接触摸！",
+    "step5-desc": "贝壳和汁水温度极高，请绝对不要用裸手触摸。",
+    "step6-title": "用刀撬开贝壳",
+    "step6-desc": "将刀插入贝壳缝隙中撬开。操作时请保持佩戴手套。",
+    "step7-title": "确认是否烤熟",
+    "step7-desc": "牡蛎肉饱满、边缘收缩说明已熟透。如果仍然透明，需要继续加热。",
+    "step8-title": "加柠檬或酱油享用",
+    "step8-desc": "根据喜好挤上柠檬汁或加入酱油，趁热享用！",
+    "tag-hot": "非常烫！",
+    "tag-danger": "危险！",
+    "warn-title": "⚠️ 注意事项",
+    "warn1-title": "贝壳和汁水非常烫！",
+    "warn1-sub": "贝壳和汁水温度可达近100°C，请务必佩戴手套。",
+    "warn2-title": "汁水可能会飞溅！",
+    "warn2-sub": "烧烤时汁水可能突然飞溅，请勿将脸凑近烤架。",
+    "warn3-title": "请勿食用未熟透的牡蛎！",
+    "warn3-sub": "请确保牡蛎完全熟透后再食用，生食会导致食物中毒。",
+    "warn4-title": "请勿让儿童单独烤！",
+    "warn4-sub": "烧烤区域有火、高温贝壳和刀具等危险物品，请大人全程陪同。",
+    "staff-section-title": "🙋 需要帮助时",
+    "staff-warn-title": "不确定时请叫工作人员！",
+    "staff-warn-sub": "请随时告知我们，我们会立刻为您提供帮助。",
+    "staff-cta": "如有任何疑问，\n请随时向工作人员咨询。",
+  },
+  ko: {
+    "header-title": "🦪 굴 굽기 안내",
+    "lang-btn": "🌐 언어",
+    "hero-title": "굴 굽기 안내",
+    "hero-sub": "안전하고 맛있게 즐기기 위한 순서를 안내해 드립니다",
+    "supplies-title": "🧰 필요한 것",
+    "supply-1": "면장갑",
+    "supply-2": "집게",
+    "supply-3": "칼",
+    "supply-4": "레몬・간장",
+    "steps-title": "📋 굽는 순서",
+    "step1-title": "면장갑을 끼세요",
+    "step1-desc": "반드시 면장갑을 끼고 시작하세요. 뜨거운 껍데기로부터 손을 보호합니다.",
+    "step2-title": "평평한 면이 위로 오도록 석쇠에 올려놓기",
+    "step2-desc": "굴의 평평한 쪽이 위를 향하도록 석쇠에 올려놓으세요. 국물이 흘러내리지 않습니다.",
+    "step3-title": "껍데기가 열릴 때까지 굽기",
+    "step3-desc": "약 5〜8분간 굽습니다. 껍데기가 조금 벌어지면 다 구워진 신호입니다.",
+    "step4-title": "집게로 꺼내기",
+    "step4-desc": "껍데기가 열리면 반드시 집게를 사용해서 꺼내세요.",
+    "step5-title": "맨손으로 만지지 마세요！",
+    "step5-desc": "껍데기와 국물은 매우 뜨겁습니다. 절대로 맨손으로 만지지 마세요.",
+    "step6-title": "칼로 껍데기 열기",
+    "step6-desc": "껍데기 틈새에 칼을 넣어 벌려주세요. 장갑을 낀 채로 작업하세요.",
+    "step7-title": "속까지 익었는지 확인하기",
+    "step7-desc": "굴 살이 통통하게 부풀고 가장자리가 오그라들었으면 익은 것입니다. 투명한 상태면 덜 익은 것입니다.",
+    "step8-title": "레몬이나 간장을 뿌려서 드세요",
+    "step8-desc": "기호에 따라 레몬즙을 짜거나 간장을 뿌려 드세요. 뜨거울 때 드세요！",
+    "tag-hot": "매우 뜨거워요！",
+    "tag-danger": "위험！",
+    "warn-title": "⚠️ 주의사항",
+    "warn1-title": "껍데기와 국물이 매우 뜨겁습니다！",
+    "warn1-sub": "껍데기와 국물은 약 100°C에 가깝습니다. 반드시 면장갑을 착용하세요.",
+    "warn2-title": "국물이 튈 수 있습니다！",
+    "warn2-sub": "구울 때 국물이 갑자기 튀어나올 수 있습니다. 얼굴을 가까이 대지 마세요.",
+    "warn3-title": "덜 익은 굴은 드시지 마세요！",
+    "warn3-sub": "속까지 충분히 익힌 후 드세요. 식중독의 원인이 됩니다.",
+    "warn4-title": "어린이만 혼자 굽게 하지 마세요！",
+    "warn4-sub": "불·뜨거운 껍데기·칼 등 위험한 것들이 있습니다. 반드시 어른이 함께 하세요.",
+    "staff-section-title": "🙋 모를 때는",
+    "staff-warn-title": "모르면 직원을 불러주세요！",
+    "staff-warn-sub": "편하게 말씀해 주세요. 바로 도와드리겠습니다.",
+    "staff-cta": "궁금한 점이 있으시면\n편하게 직원에게 말씀해 주세요。",
+  }
+};
+
+let currentLang = 'ja';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('langOverlay').style.display = 'none';
+  document.getElementById('mainPage').classList.add('active');
+  applyTranslations(lang);
+  window.scrollTo(0, 0);
+}
+
+function showLangOverlay() {
+  document.getElementById('langOverlay').style.display = 'flex';
+}
+
+function applyTranslations(lang) {
+  const t = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key].replace(/\n/g, '<br>');
+    }
+  });
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+}
+</script>
+
+</body>
+</html>
