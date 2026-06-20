@@ -117,6 +117,29 @@
     .header-logo { height: 70px; width: auto; display: block; }
     .header-title { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
 
+    .page-nav {
+      display: flex;
+      border-top: 1px solid var(--border);
+    }
+
+    .page-nav-btn {
+      flex: 1;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .page-nav-btn.active {
+      color: var(--ocean);
+      border-bottom-color: var(--ocean);
+      background: var(--ocean-pale);
+    }
+
     .lang-switch-btn {
       background: var(--ocean);
       border: 1px solid var(--ocean);
@@ -331,6 +354,10 @@
       <div class="header-title" data-i18n="header-title">アクアマリン糸島</div>
       <button class="lang-switch-btn" onclick="showLangOverlay()" data-i18n="lang-btn">言語</button>
     </div>
+    <nav class="page-nav">
+      <a href="index.html" class="page-nav-btn active" data-i18n="nav-kaki">カキの焼き方</a>
+      <a href="sazae.html" class="page-nav-btn" data-i18n="nav-sazae">サザエの焼き方</a>
+    </nav>
   </header>
 
   <section class="hero">
@@ -435,6 +462,8 @@ const i18n = {
   ja: {
     "header-title": "アクアマリン糸島",
     "lang-btn": "言語",
+    "nav-kaki": "カキの焼き方",
+    "nav-sazae": "サザエの焼き方",
     "hero-title": "牡蠣の美味しい焼き方",
     "hero-sub": "アツアツ・プリプリの牡蠣を楽しむための手順をご案内します",
     "steps-title": "焼き方の手順",
@@ -460,6 +489,8 @@ const i18n = {
   en: {
     "header-title": "Aquamarine Itoshima",
     "lang-btn": "Language",
+    "nav-kaki": "Grilled Oysters",
+    "nav-sazae": "Grilled Turban Shell",
     "hero-title": "How to Grill Delicious Oysters",
     "hero-sub": "Follow these steps to enjoy hot, plump, freshly grilled oysters",
     "steps-title": "Grilling Steps",
@@ -485,6 +516,8 @@ const i18n = {
   zh: {
     "header-title": "水蓝糸岛",
     "lang-btn": "语言",
+    "nav-kaki": "烤牡蛎",
+    "nav-sazae": "烤夜光螺",
     "hero-title": "牡蛎的美味烧烤方法",
     "hero-sub": "按照以下步骤，享用热乎乎、鲜嫩多汁的烤牡蛎",
     "steps-title": "烧烤步骤",
@@ -510,6 +543,8 @@ const i18n = {
   ko: {
     "header-title": "아쿠아마린 이토시마",
     "lang-btn": "언어",
+    "nav-kaki": "굴 굽기",
+    "nav-sazae": "소라 굽기",
     "hero-title": "굴을 맛있게 굽는 법",
     "hero-sub": "따끈따끈하고 탱글탱글한 굴을 즐기기 위한 순서를 안내해 드립니다",
     "steps-title": "굽는 순서",
