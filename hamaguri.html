@@ -119,22 +119,24 @@
     }
 
     .page-nav {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--border);
-      overflow-x: auto;
     }
 
     .page-nav-btn {
-      flex: 1;
-      min-width: 80px;
-      padding: 12px 8px;
-      text-align: center;
-      font-size: 13px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(10px, 2.6vw, 13px);
       font-weight: 600;
       color: var(--text-mid);
       text-decoration: none;
       border-bottom: 3px solid transparent;
       white-space: nowrap;
+      overflow: hidden;
+      padding: 0 2px;
     }
 
     .page-nav-btn.active {

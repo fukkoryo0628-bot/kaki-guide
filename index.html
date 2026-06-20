@@ -118,20 +118,24 @@
     .header-title { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
 
     .page-nav {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--border);
     }
 
     .page-nav-btn {
-      flex: 1;
-      padding: 12px 8px;
-      text-align: center;
-      font-size: 14px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(10px, 2.6vw, 13px);
       font-weight: 600;
       color: var(--text-mid);
       text-decoration: none;
       border-bottom: 3px solid transparent;
-      transition: all 0.2s;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 0 2px;
     }
 
     .page-nav-btn.active {
