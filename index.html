@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>牡蠣の焼き方 | How to Grill Oysters</title>
+  <title>牡蠣の美味しい焼き方 | How to Grill Oysters</title>
   <meta name="description" content="牡蠣の焼き方ガイド / Oyster grilling guide">
   <style>
     :root {
@@ -99,20 +99,9 @@
       background: rgba(255,255,255,0.22);
     }
 
-    .lang-btn .flag {
-      font-size: 36px;
-      line-height: 1;
-    }
-
-    .lang-btn .lang-name {
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .lang-btn .lang-sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.6);
-    }
+    .lang-btn .flag { font-size: 36px; line-height: 1; }
+    .lang-btn .lang-name { font-size: 17px; font-weight: 700; }
+    .lang-btn .lang-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
 
     /* ===== MAIN PAGE ===== */
     .main-page { display: none; }
@@ -122,7 +111,6 @@
     .header {
       background: var(--ocean);
       color: white;
-      padding: 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -136,11 +124,7 @@
       padding: 14px 16px;
     }
 
-    .header-title {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
+    .header-title { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
 
     .lang-switch-btn {
       background: rgba(255,255,255,0.18);
@@ -205,7 +189,7 @@
     .steps {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
       padding: 0 16px 8px;
     }
 
@@ -222,53 +206,33 @@
       aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
-      background: var(--ocean-pale);
     }
 
-    .step-img-placeholder {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--ocean-pale) 0%, #d0e8f4 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--ocean);
-    }
-
-    .step-img-placeholder .ph-icon { font-size: 48px; }
-    .step-img-placeholder .ph-text { font-size: 12px; color: var(--text-light); }
-
-    .step-body {
-      padding: 16px 18px 20px;
-    }
+    .step-body { padding: 18px 18px 22px; }
 
     .step-number-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .step-num {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       background: var(--ocean);
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 800;
       flex-shrink: 0;
     }
 
-    .step-icon { font-size: 24px; }
-
     .step-title {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 800;
       color: var(--text);
       line-height: 1.35;
@@ -277,25 +241,18 @@
     .step-desc {
       font-size: 15px;
       color: var(--text-mid);
-      line-height: 1.75;
-      margin-top: 6px;
+      line-height: 1.85;
     }
 
-    /* Danger / Warning tag on steps */
-    .step-card.danger .step-num { background: var(--red); }
-
-    .step-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: var(--red-light);
-      color: var(--red);
-      border: 1px solid var(--red-border);
-      border-radius: 6px;
-      padding: 3px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 8px;
+    .step-tip {
+      margin-top: 12px;
+      background: var(--ocean-pale);
+      border-left: 3px solid var(--ocean);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--ocean);
+      line-height: 1.7;
     }
 
     /* Warning Section */
@@ -316,50 +273,14 @@
       gap: 12px;
     }
 
-    .warn-icon {
-      font-size: 26px;
-      flex-shrink: 0;
-      line-height: 1;
-      margin-top: 1px;
-    }
+    .warn-icon { font-size: 26px; flex-shrink: 0; line-height: 1; margin-top: 1px; }
 
     .warn-text {
       font-size: 15px;
       font-weight: 700;
       color: var(--red);
-      line-height: 1.55;
+      line-height: 1.6;
     }
-
-    .warn-sub {
-      font-size: 13px;
-      font-weight: 400;
-      color: #b91c1c;
-      margin-top: 3px;
-      line-height: 1.55;
-    }
-
-    /* Supplies */
-    .supplies {
-      padding: 0 16px 8px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .supply-card {
-      background: var(--amber-light);
-      border: 1px solid #fcd38e;
-      border-radius: 14px;
-      padding: 16px 12px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .supply-card .s-icon { font-size: 34px; }
-    .supply-card .s-name { font-size: 14px; font-weight: 700; color: var(--amber); }
 
     /* Staff CTA */
     .staff-cta {
@@ -377,7 +298,7 @@
       font-size: 16px;
       font-weight: 700;
       color: #15803d;
-      line-height: 1.65;
+      line-height: 1.75;
     }
 
     /* Footer */
@@ -389,8 +310,6 @@
       font-size: 13px;
       margin-top: 24px;
     }
-
-    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -399,7 +318,7 @@
 <div class="lang-overlay" id="langOverlay">
   <div class="oyster-icon">🦪</div>
   <h1 id="overlay-title">言語を選んでください<br>Please select your language</h1>
-  <p class="subtitle" id="overlay-sub">牡蠣の焼き方ガイド<br>Oyster Grilling Guide<br>烤牡蛎指南 / 굴 굽기 안내</p>
+  <p class="subtitle">牡蠣の美味しい焼き方<br>How to Grill Oysters<br>烤牡蛎的美味做法 / 맛있는 굴 굽는 법</p>
   <div class="lang-buttons">
     <button class="lang-btn" onclick="setLang('ja')">
       <span class="flag">🇯🇵</span>
@@ -427,43 +346,18 @@
 <!-- ===== MAIN PAGE ===== -->
 <div class="main-page" id="mainPage">
 
-  <!-- Header -->
   <header class="header">
     <div class="header-inner">
-      <div class="header-title" data-i18n="header-title">🦪 牡蠣の焼き方</div>
+      <div class="header-title" data-i18n="header-title">🦪 牡蠣の美味しい焼き方</div>
       <button class="lang-switch-btn" onclick="showLangOverlay()" data-i18n="lang-btn">🌐 言語</button>
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-icon">🔥🦪</div>
-    <h2 data-i18n="hero-title">牡蠣の焼き方</h2>
-    <p data-i18n="hero-sub">安全においしく楽しむための手順をご案内します</p>
+    <h2 data-i18n="hero-title">牡蠣の美味しい焼き方</h2>
+    <p data-i18n="hero-sub">アツアツ・プリプリの牡蠣を楽しむための手順をご案内します</p>
   </section>
-
-  <!-- 必要なもの -->
-  <div class="section">
-    <div class="section-title" data-i18n="supplies-title">🧰 必要なもの</div>
-  </div>
-  <div class="supplies">
-    <div class="supply-card">
-      <span class="s-icon">🧤</span>
-      <span class="s-name" data-i18n="supply-1">軍手</span>
-    </div>
-    <div class="supply-card">
-      <span class="s-icon">🥄</span>
-      <span class="s-name" data-i18n="supply-2">トング</span>
-    </div>
-    <div class="supply-card">
-      <span class="s-icon">🔪</span>
-      <span class="s-name" data-i18n="supply-3">ナイフ</span>
-    </div>
-    <div class="supply-card">
-      <span class="s-icon">🍋</span>
-      <span class="s-name" data-i18n="supply-4">レモン・醤油</span>
-    </div>
-  </div>
 
   <!-- 手順 -->
   <div class="section">
@@ -473,107 +367,63 @@
 
     <!-- Step 1 -->
     <div class="step-card">
-      <img class="step-img" src="images/grilled3.png" alt="Step 1">
+      <img class="step-img" src="images/grilled1.png" alt="Step 1">
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">1</div>
-          <span class="step-icon">🧤</span>
-          <div class="step-title" data-i18n="step1-title">軍手をつける</div>
+          <div class="step-title" data-i18n="step1-title">平らな面を下にして焼きます</div>
         </div>
-        <p class="step-desc" data-i18n="step1-desc">必ず軍手をつけてから作業を始めてください。熱い殻から手を守ります。</p>
+        <p class="step-desc" data-i18n="step1-desc">ガス火の準備ができたら、牡蠣の平らな面を下にして並べます。約40秒後、殻が開く前にトングでひっくり返します。</p>
+        <div class="step-tip" data-i18n="step1-tip">💡 殻の丸い方から汁が飛びますので、殻の丸い方を人のいない方向に置くのがポイントです。</div>
       </div>
     </div>
 
     <!-- Step 2 -->
     <div class="step-card">
-      <img class="step-img" src="images/grilled1.png" alt="Step 2">
+      <img class="step-img" src="images/grilled2.png" alt="Step 2">
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">2</div>
-          <span class="step-icon">🦪</span>
-          <div class="step-title" data-i18n="step2-title">平らな面を上にして網に置く</div>
+          <div class="step-title" data-i18n="step2-title">ひっくり返してもう片面を焼きます</div>
         </div>
-        <p class="step-desc" data-i18n="step2-desc">牡蠣の平らな面（平べったい側）を上にして、網の上に置いてください。汁がこぼれにくくなります。</p>
+        <p class="step-desc" data-i18n="step2-desc">ひっくり返した後、2〜3分焼いて殻が開き、牡蠣の身が白くなっていれば食べごろです。殻が1〜2ミリしか開かない牡蠣もありますが、同じタイミングで焼き始めた牡蠣が開いていれば食べられます。そのまま焼き続けると、焦げてしまいますので、網の端の方に置くか、お皿に取ってください。</p>
       </div>
     </div>
 
     <!-- Step 3 -->
     <div class="step-card">
-      <img class="step-img" src="images/grilled1.png" alt="Step 3">
+      <img class="step-img" src="images/grilled3.png" alt="Step 3">
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">3</div>
-          <span class="step-icon">🔥</span>
-          <div class="step-title" data-i18n="step3-title">殻が開くまで焼く</div>
+          <div class="step-title" data-i18n="step3-title">殻を開けます</div>
         </div>
-        <p class="step-desc" data-i18n="step3-desc">そのまま約5〜8分焼きます。殻が少し開いてきたら焼き上がりのサインです。</p>
+        <p class="step-desc" data-i18n="step3-desc">牡蠣の平らな方を上にして、殻の尖った方を手で持って固定します。殻の丸い方から殻の内側にナイフの刃先を入れて殻を開き、上の殻（平らな方）をはずします。この時、下の殻（丸みがある方）に、牡蠣の旨味をたっぷり含んだ汁が出ていますので、こぼさないように気をつけます。</p>
+        <div class="step-tip" data-i18n="step3-tip">🧤 軍手を使用してやけどにご注意ください。</div>
       </div>
     </div>
 
     <!-- Step 4 -->
-    <div class="step-card danger">
-      <img class="step-img" src="images/grilled2.png" alt="Step 4">
+    <div class="step-card">
+      <img class="step-img" src="images/grilled4.png" alt="Step 4">
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">4</div>
-          <span class="step-icon">🥄</span>
-          <div class="step-title" data-i18n="step4-title">トングで取り出す</div>
+          <div class="step-title" data-i18n="step4-title">貝柱を切り離します</div>
         </div>
-        <p class="step-desc" data-i18n="step4-desc">殻が開いたら、必ずトングを使って取り出してください。</p>
-        <span class="step-tag">⚠️ <span data-i18n="tag-hot">とても熱い！</span></span>
+        <p class="step-desc" data-i18n="step4-desc">はずした上の殻（平らな方）に身が付いていますので、殻に沿ってナイフを入れ、貝柱を切り離します。身がはずれたら、下の殻（丸みがある方）に、残した汁にのせるようにそっと身を移します。</p>
       </div>
     </div>
 
     <!-- Step 5 -->
-    <div class="step-card danger">
-      <img class="step-img" src="images/grilled2.png" alt="Step 5">
+    <div class="step-card">
+      <img class="step-img" src="images/grilled5.png" alt="Step 5">
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">5</div>
-          <span class="step-icon">🚫</span>
-          <div class="step-title" data-i18n="step5-title">素手で触らない！</div>
+          <div class="step-title" data-i18n="step5-title">アツアツの牡蠣をお召し上がりください</div>
         </div>
-        <p class="step-desc" data-i18n="step5-desc">殻や中の汁は非常に熱くなっています。素手で絶対に触らないでください。</p>
-        <span class="step-tag">⚠️ <span data-i18n="tag-danger">危険！</span></span>
-      </div>
-    </div>
-
-    <!-- Step 6 -->
-    <div class="step-card">
-      <img class="step-img" src="images/grilled3.png" alt="Step 6">
-      <div class="step-body">
-        <div class="step-number-row">
-          <div class="step-num">6</div>
-          <span class="step-icon">🔪</span>
-          <div class="step-title" data-i18n="step6-title">ナイフで殻を開ける</div>
-        </div>
-        <p class="step-desc" data-i18n="step6-desc">殻の隙間にナイフを差し込み、こじ開けてください。軍手をしたまま行いましょう。</p>
-      </div>
-    </div>
-
-    <!-- Step 7 -->
-    <div class="step-card">
-      <img class="step-img" src="images/grilled4.png" alt="Step 7">
-      <div class="step-body">
-        <div class="step-number-row">
-          <div class="step-num">7</div>
-          <span class="step-icon">✅</span>
-          <div class="step-title" data-i18n="step7-title">中まで火が通っているか確認</div>
-        </div>
-        <p class="step-desc" data-i18n="step7-desc">牡蠣の身がぷっくりと膨らみ、縁が縮れていれば火が通っています。透明なままの場合は生焼けです。</p>
-      </div>
-    </div>
-
-    <!-- Step 8 -->
-    <div class="step-card">
-      <img class="step-img" src="images/grilled5.png" alt="Step 8">
-      <div class="step-body">
-        <div class="step-number-row">
-          <div class="step-num">8</div>
-          <span class="step-icon">🍋</span>
-          <div class="step-title" data-i18n="step8-title">レモンや醤油をかけて食べる</div>
-        </div>
-        <p class="step-desc" data-i18n="step8-desc">お好みでレモンを絞ったり、醤油をかけてお召し上がりください。熱いうちにどうぞ！</p>
+        <p class="step-desc" data-i18n="step5-desc">焼き立てのアツアツ・プリプリの牡蠣をお楽しみください。</p>
       </div>
     </div>
 
@@ -581,243 +431,144 @@
 
   <!-- 注意事項 -->
   <div class="section">
-    <div class="section-title" data-i18n="warn-title">⚠️ 注意事項</div>
+    <div class="section-title" data-i18n="warn-title">⚠️ ご注意ください</div>
   </div>
   <div class="warnings">
 
     <div class="warn-card">
       <span class="warn-icon">🔥</span>
-      <div>
-        <div class="warn-text" data-i18n="warn1-title">殻や汁がとても熱い！</div>
-        <div class="warn-sub" data-i18n="warn1-sub">殻・汁ともに100℃近くなります。必ず軍手を着用してください。</div>
-      </div>
+      <div class="warn-text" data-i18n="warn1">牡蠣はよく焼いてお召し上がりください。</div>
     </div>
 
     <div class="warn-card">
       <span class="warn-icon">💦</span>
-      <div>
-        <div class="warn-text" data-i18n="warn2-title">汁が飛び散ることがあります！</div>
-        <div class="warn-sub" data-i18n="warn2-sub">焼いているときに汁が急に飛び出すことがあります。顔を近づけないでください。</div>
-      </div>
+      <div class="warn-text" data-i18n="warn2">牡蠣の汁・殻が飛び散ることがありますので、ご注意ください。</div>
     </div>
 
     <div class="warn-card">
-      <span class="warn-icon">🚫</span>
-      <div>
-        <div class="warn-text" data-i18n="warn3-title">生焼けでは食べないでください！</div>
-        <div class="warn-sub" data-i18n="warn3-sub">中まで十分に火を通してから食べてください。食中毒の原因になります。</div>
-      </div>
+      <span class="warn-icon">🌡️</span>
+      <div class="warn-text" data-i18n="warn3">コンロの周りは熱くなっていますので、ご注意ください。</div>
     </div>
 
     <div class="warn-card">
-      <span class="warn-icon">👧</span>
-      <div>
-        <div class="warn-text" data-i18n="warn4-title">子どもだけで焼かせないでください！</div>
-        <div class="warn-sub" data-i18n="warn4-sub">火・熱い殻・ナイフなど危険なものがあります。必ず大人が付き添ってください。</div>
-      </div>
+      <span class="warn-icon">🧤</span>
+      <div class="warn-text" data-i18n="warn4">軍手に焼けた牡蠣の汁が付くとやけどの恐れがあります。</div>
     </div>
 
   </div>
 
-  <!-- スタッフを呼ぶ -->
-  <div class="section">
-    <div class="section-title" data-i18n="staff-section-title">🙋 わからないときは</div>
-  </div>
-  <div style="padding: 0 16px 8px;">
-    <div class="warn-card" style="background:#fff7ed;border-color:#fed7aa;">
-      <span class="warn-icon">📢</span>
-      <div>
-        <div class="warn-text" style="color:#c2410c;" data-i18n="staff-warn-title">迷ったらスタッフを呼んでください！</div>
-        <div class="warn-sub" style="color:#9a3412;" data-i18n="staff-warn-sub">遠慮なくお声がけください。すぐにお手伝いします。</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- スタッフへ声かけ -->
+  <!-- スタッフCTA -->
   <div class="staff-cta">
     <div class="cta-icon">🙋‍♀️</div>
     <p data-i18n="staff-cta">ご不明な点がございましたら、<br>スタッフまでお気軽にお声かけください。</p>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     <p>🦪 Kaki-Goya Grilling Guide</p>
   </div>
 
-</div><!-- /main-page -->
+</div>
 
 <script>
 const i18n = {
   ja: {
-    "header-title": "🦪 牡蠣の焼き方",
+    "header-title": "🦪 牡蠣の美味しい焼き方",
     "lang-btn": "🌐 言語",
-    "hero-title": "牡蠣の焼き方",
-    "hero-sub": "安全においしく楽しむための手順をご案内します",
-    "supplies-title": "🧰 必要なもの",
-    "supply-1": "軍手",
-    "supply-2": "トング",
-    "supply-3": "ナイフ",
-    "supply-4": "レモン・醤油",
+    "hero-title": "牡蠣の美味しい焼き方",
+    "hero-sub": "アツアツ・プリプリの牡蠣を楽しむための手順をご案内します",
     "steps-title": "📋 焼き方の手順",
-    "step1-title": "軍手をつける",
-    "step1-desc": "必ず軍手をつけてから作業を始めてください。熱い殻から手を守ります。",
-    "step2-title": "平らな面を上にして網に置く",
-    "step2-desc": "牡蠣の平らな面（平べったい側）を上にして、網の上に置いてください。汁がこぼれにくくなります。",
-    "step3-title": "殻が開くまで焼く",
-    "step3-desc": "そのまま約5〜8分焼きます。殻が少し開いてきたら焼き上がりのサインです。",
-    "step4-title": "トングで取り出す",
-    "step4-desc": "殻が開いたら、必ずトングを使って取り出してください。",
-    "step5-title": "素手で触らない！",
-    "step5-desc": "殻や中の汁は非常に熱くなっています。素手で絶対に触らないでください。",
-    "step6-title": "ナイフで殻を開ける",
-    "step6-desc": "殻の隙間にナイフを差し込み、こじ開けてください。軍手をしたまま行いましょう。",
-    "step7-title": "中まで火が通っているか確認",
-    "step7-desc": "牡蠣の身がぷっくりと膨らみ、縁が縮れていれば火が通っています。透明なままの場合は生焼けです。",
-    "step8-title": "レモンや醤油をかけて食べる",
-    "step8-desc": "お好みでレモンを絞ったり、醤油をかけてお召し上がりください。熱いうちにどうぞ！",
-    "tag-hot": "とても熱い！",
-    "tag-danger": "危険！",
-    "warn-title": "⚠️ 注意事項",
-    "warn1-title": "殻や汁がとても熱い！",
-    "warn1-sub": "殻・汁ともに100℃近くなります。必ず軍手を着用してください。",
-    "warn2-title": "汁が飛び散ることがあります！",
-    "warn2-sub": "焼いているときに汁が急に飛び出すことがあります。顔を近づけないでください。",
-    "warn3-title": "生焼けでは食べないでください！",
-    "warn3-sub": "中まで十分に火を通してから食べてください。食中毒の原因になります。",
-    "warn4-title": "子どもだけで焼かせないでください！",
-    "warn4-sub": "火・熱い殻・ナイフなど危険なものがあります。必ず大人が付き添ってください。",
-    "staff-section-title": "🙋 わからないときは",
-    "staff-warn-title": "迷ったらスタッフを呼んでください！",
-    "staff-warn-sub": "遠慮なくお声がけください。すぐにお手伝いします。",
+    "step1-title": "平らな面を下にして焼きます",
+    "step1-desc": "ガス火の準備ができたら、牡蠣の平らな面を下にして並べます。約40秒後、殻が開く前にトングでひっくり返します。",
+    "step1-tip": "💡 殻の丸い方から汁が飛びますので、殻の丸い方を人のいない方向に置くのがポイントです。",
+    "step2-title": "ひっくり返してもう片面を焼きます",
+    "step2-desc": "ひっくり返した後、2〜3分焼いて殻が開き、牡蠣の身が白くなっていれば食べごろです。殻が1〜2ミリしか開かない牡蠣もありますが、同じタイミングで焼き始めた牡蠣が開いていれば食べられます。そのまま焼き続けると、焦げてしまいますので、網の端の方に置くか、お皿に取ってください。",
+    "step3-title": "殻を開けます",
+    "step3-desc": "牡蠣の平らな方を上にして、殻の尖った方を手で持って固定します。殻の丸い方から殻の内側にナイフの刃先を入れて殻を開き、上の殻（平らな方）をはずします。この時、下の殻（丸みがある方）に、牡蠣の旨味をたっぷり含んだ汁が出ていますので、こぼさないように気をつけます。",
+    "step3-tip": "🧤 軍手を使用してやけどにご注意ください。",
+    "step4-title": "貝柱を切り離します",
+    "step4-desc": "はずした上の殻（平らな方）に身が付いていますので、殻に沿ってナイフを入れ、貝柱を切り離します。身がはずれたら、下の殻（丸みがある方）に、残した汁にのせるようにそっと身を移します。",
+    "step5-title": "アツアツの牡蠣をお召し上がりください",
+    "step5-desc": "焼き立てのアツアツ・プリプリの牡蠣をお楽しみください。",
+    "warn-title": "⚠️ ご注意ください",
+    "warn1": "牡蠣はよく焼いてお召し上がりください。",
+    "warn2": "牡蠣の汁・殻が飛び散ることがありますので、ご注意ください。",
+    "warn3": "コンロの周りは熱くなっていますので、ご注意ください。",
+    "warn4": "軍手に焼けた牡蠣の汁が付くとやけどの恐れがあります。",
     "staff-cta": "ご不明な点がございましたら、\nスタッフまでお気軽にお声かけください。",
   },
   en: {
     "header-title": "🦪 How to Grill Oysters",
     "lang-btn": "🌐 Language",
-    "hero-title": "How to Grill Oysters",
-    "hero-sub": "Follow these steps to safely enjoy delicious grilled oysters",
-    "supplies-title": "🧰 What You'll Need",
-    "supply-1": "Work Gloves",
-    "supply-2": "Tongs",
-    "supply-3": "Knife",
-    "supply-4": "Lemon / Soy Sauce",
+    "hero-title": "How to Grill Delicious Oysters",
+    "hero-sub": "Follow these steps to enjoy hot, plump, freshly grilled oysters",
     "steps-title": "📋 Grilling Steps",
-    "step1-title": "Put on Work Gloves",
-    "step1-desc": "Always put on work gloves before you start. They protect your hands from the hot shells.",
-    "step2-title": "Place Flat Side Up on Grill",
-    "step2-desc": "Place the oyster with the flat (flatter) side facing UP on the grill. This prevents the juices from spilling out.",
-    "step3-title": "Grill Until Shell Opens",
-    "step3-desc": "Grill for about 5–8 minutes. When the shell starts to open slightly, the oyster is ready.",
-    "step4-title": "Remove with Tongs",
-    "step4-desc": "Once the shell opens, use tongs to carefully remove the oyster from the grill.",
-    "step5-title": "Do NOT Touch with Bare Hands!",
-    "step5-desc": "The shell and juices are extremely hot. Never touch them with your bare hands.",
-    "step6-title": "Open the Shell with a Knife",
-    "step6-desc": "Insert the knife into the gap of the shell and pry it open. Keep your gloves on while doing this.",
-    "step7-title": "Check That It's Fully Cooked",
-    "step7-desc": "The oyster is ready when the meat is plump and the edges are curled. If it still looks translucent, it needs more cooking.",
-    "step8-title": "Add Lemon or Soy Sauce and Enjoy!",
-    "step8-desc": "Squeeze lemon juice or add a dash of soy sauce to taste. Enjoy while it's hot!",
-    "tag-hot": "Very Hot!",
-    "tag-danger": "Danger!",
-    "warn-title": "⚠️ Safety Warnings",
-    "warn1-title": "Shells and juices are extremely hot!",
-    "warn1-sub": "The shell and liquid can reach nearly 100°C. Always wear work gloves.",
-    "warn2-title": "Hot juice may splatter!",
-    "warn2-sub": "Juice can suddenly shoot out while grilling. Do not lean your face over the grill.",
-    "warn3-title": "Do not eat undercooked oysters!",
-    "warn3-sub": "Make sure the oyster is fully cooked before eating. Undercooked oysters can cause food poisoning.",
-    "warn4-title": "Do not let children grill alone!",
-    "warn4-sub": "There are fire, hot shells, and sharp knives. An adult must always supervise.",
-    "staff-section-title": "🙋 Need Help?",
-    "staff-warn-title": "Call a staff member if you're unsure!",
-    "staff-warn-sub": "Don't hesitate to ask. We're happy to help right away.",
+    "step1-title": "1. Place Flat Side Down and Grill",
+    "step1-desc": "Once the gas fire is ready, place the oysters flat side down on the grill. After about 40 seconds, flip them with tongs before the shells open.",
+    "step1-tip": "💡 Juice may splatter from the rounded side of the shell, so position the rounded side away from people.",
+    "step2-title": "2. Flip and Grill the Other Side",
+    "step2-desc": "After flipping, grill for 2–3 minutes. The oyster is ready when the shell opens and the meat turns white. Some shells may only open 1–2mm, but if others started at the same time are open, they're ready to eat. Leaving them on the heat too long will cause burning, so move them to the edge of the grill or onto a plate.",
+    "step3-title": "3. Open the Shell",
+    "step3-desc": "Place the oyster flat side up and hold the pointed end firmly with your hand. Insert the tip of the knife into the rounded side of the shell and pry it open, then remove the upper shell (the flat side). At this point, the lower shell (the rounded side) will contain juice full of the oyster's umami flavor — be careful not to spill it.",
+    "step3-tip": "🧤 Use work gloves and be careful of burns.",
+    "step4-title": "4. Cut the Adductor Muscle",
+    "step4-desc": "The meat will be attached to the upper shell (flat side) you removed, so run the knife along the shell to cut the adductor muscle. Once the meat is free, gently place it back into the lower shell (rounded side), resting it on the remaining juice.",
+    "step5-title": "5. Enjoy the Hot Oysters!",
+    "step5-desc": "Savor the freshly grilled, piping hot, plump oysters!",
+    "warn-title": "⚠️ Important Warnings",
+    "warn1": "Please make sure the oysters are fully cooked before eating.",
+    "warn2": "Be careful as oyster juice and shells may splatter.",
+    "warn3": "The area around the stove gets very hot — please be careful.",
+    "warn4": "If hot oyster juice gets on your work gloves, it may cause burns.",
     "staff-cta": "If you have any questions,\nplease feel free to ask a staff member.",
   },
   zh: {
-    "header-title": "🦪 烤牡蛎指南",
+    "header-title": "🦪 牡蛎美味烧烤指南",
     "lang-btn": "🌐 语言",
-    "hero-title": "烤牡蛎指南",
-    "hero-sub": "请按照以下步骤安全享用美味烤牡蛎",
-    "supplies-title": "🧰 所需物品",
-    "supply-1": "工作手套",
-    "supply-2": "夹子",
-    "supply-3": "刀",
-    "supply-4": "柠檬・酱油",
-    "steps-title": "📋 烤牡蛎步骤",
-    "step1-title": "戴上工作手套",
-    "step1-desc": "开始操作前，请务必戴上工作手套，保护双手免受高温贝壳烫伤。",
-    "step2-title": "平面朝上放在烤网上",
-    "step2-desc": "将牡蛎较平的一面朝上放在烤网上，这样可以防止汁水溢出。",
-    "step3-title": "烤至贝壳开口",
-    "step3-desc": "烤约5〜8分钟，当贝壳稍微裂开时，表示已经烤好了。",
-    "step4-title": "用夹子取出",
-    "step4-desc": "贝壳开口后，请务必使用夹子将牡蛎取出。",
-    "step5-title": "禁止用手直接触摸！",
-    "step5-desc": "贝壳和汁水温度极高，请绝对不要用裸手触摸。",
-    "step6-title": "用刀撬开贝壳",
-    "step6-desc": "将刀插入贝壳缝隙中撬开。操作时请保持佩戴手套。",
-    "step7-title": "确认是否烤熟",
-    "step7-desc": "牡蛎肉饱满、边缘收缩说明已熟透。如果仍然透明，需要继续加热。",
-    "step8-title": "加柠檬或酱油享用",
-    "step8-desc": "根据喜好挤上柠檬汁或加入酱油，趁热享用！",
-    "tag-hot": "非常烫！",
-    "tag-danger": "危险！",
+    "hero-title": "牡蛎的美味烧烤方法",
+    "hero-sub": "按照以下步骤，享用热乎乎、鲜嫩多汁的烤牡蛎",
+    "steps-title": "📋 烧烤步骤",
+    "step1-title": "1. 将平面朝下放置烧烤",
+    "step1-desc": "火候准备好后，将牡蛎平面朝下排列在烤架上。约40秒后，在壳未打开前用夹子翻面。",
+    "step1-tip": "💡 由于汁水会从圆弧面飞溅，建议将圆弧面朝向无人方向放置。",
+    "step2-title": "2. 翻面继续烧烤",
+    "step2-desc": "翻面后再烤2〜3分钟。当壳打开、牡蛎肉变白时就可以吃了。有些牡蛎的壳只会开1〜2毫米，但只要同时开始烤的其他牡蛎已经开壳，就可以食用了。继续烤下去会焦糊，请将其移到烤架边缘或取出放到盘子里。",
+    "step3-title": "3. 打开贝壳",
+    "step3-desc": "将牡蛎平面朝上，用手握住尖端固定。将刀尖从圆弧面插入壳内撬开，取下上壳（平面那侧）。此时，下壳（圆弧面那侧）中会有充满牡蛎鲜味的汁水，注意不要溅出。",
+    "step3-tip": "🧤 请戴手套，小心烫伤。",
+    "step4-title": "4. 切断闭壳肌",
+    "step4-desc": "取下的上壳（平面那侧）上还附着有肉，沿壳用刀切断闭壳肌。肉取下后，轻轻将其放回留有汁水的下壳（圆弧面那侧）中。",
+    "step5-title": "5. 趁热享用美味牡蛎！",
+    "step5-desc": "请尽情享用刚烤好的热乎乎、鲜嫩多汁的牡蛎！",
     "warn-title": "⚠️ 注意事项",
-    "warn1-title": "贝壳和汁水非常烫！",
-    "warn1-sub": "贝壳和汁水温度可达近100°C，请务必佩戴手套。",
-    "warn2-title": "汁水可能会飞溅！",
-    "warn2-sub": "烧烤时汁水可能突然飞溅，请勿将脸凑近烤架。",
-    "warn3-title": "请勿食用未熟透的牡蛎！",
-    "warn3-sub": "请确保牡蛎完全熟透后再食用，生食会导致食物中毒。",
-    "warn4-title": "请勿让儿童单独烤！",
-    "warn4-sub": "烧烤区域有火、高温贝壳和刀具等危险物品，请大人全程陪同。",
-    "staff-section-title": "🙋 需要帮助时",
-    "staff-warn-title": "不确定时请叫工作人员！",
-    "staff-warn-sub": "请随时告知我们，我们会立刻为您提供帮助。",
+    "warn1": "请将牡蛎充分烤熟后再食用。",
+    "warn2": "牡蛎的汁水和壳可能会飞溅，请注意。",
+    "warn3": "炉灶周围会变得很热，请注意安全。",
+    "warn4": "若热的牡蛎汁沾到手套上，可能会导致烫伤。",
     "staff-cta": "如有任何疑问，\n请随时向工作人员咨询。",
   },
   ko: {
-    "header-title": "🦪 굴 굽기 안내",
+    "header-title": "🦪 맛있는 굴 굽는 법",
     "lang-btn": "🌐 언어",
-    "hero-title": "굴 굽기 안내",
-    "hero-sub": "안전하고 맛있게 즐기기 위한 순서를 안내해 드립니다",
-    "supplies-title": "🧰 필요한 것",
-    "supply-1": "면장갑",
-    "supply-2": "집게",
-    "supply-3": "칼",
-    "supply-4": "레몬・간장",
+    "hero-title": "굴을 맛있게 굽는 법",
+    "hero-sub": "따끈따끈하고 탱글탱글한 굴을 즐기기 위한 순서를 안내해 드립니다",
     "steps-title": "📋 굽는 순서",
-    "step1-title": "면장갑을 끼세요",
-    "step1-desc": "반드시 면장갑을 끼고 시작하세요. 뜨거운 껍데기로부터 손을 보호합니다.",
-    "step2-title": "평평한 면이 위로 오도록 석쇠에 올려놓기",
-    "step2-desc": "굴의 평평한 쪽이 위를 향하도록 석쇠에 올려놓으세요. 국물이 흘러내리지 않습니다.",
-    "step3-title": "껍데기가 열릴 때까지 굽기",
-    "step3-desc": "약 5〜8분간 굽습니다. 껍데기가 조금 벌어지면 다 구워진 신호입니다.",
-    "step4-title": "집게로 꺼내기",
-    "step4-desc": "껍데기가 열리면 반드시 집게를 사용해서 꺼내세요.",
-    "step5-title": "맨손으로 만지지 마세요！",
-    "step5-desc": "껍데기와 국물은 매우 뜨겁습니다. 절대로 맨손으로 만지지 마세요.",
-    "step6-title": "칼로 껍데기 열기",
-    "step6-desc": "껍데기 틈새에 칼을 넣어 벌려주세요. 장갑을 낀 채로 작업하세요.",
-    "step7-title": "속까지 익었는지 확인하기",
-    "step7-desc": "굴 살이 통통하게 부풀고 가장자리가 오그라들었으면 익은 것입니다. 투명한 상태면 덜 익은 것입니다.",
-    "step8-title": "레몬이나 간장을 뿌려서 드세요",
-    "step8-desc": "기호에 따라 레몬즙을 짜거나 간장을 뿌려 드세요. 뜨거울 때 드세요！",
-    "tag-hot": "매우 뜨거워요！",
-    "tag-danger": "위험！",
+    "step1-title": "1. 평평한 면을 아래로 하여 굽습니다",
+    "step1-desc": "가스불이 준비되면 굴의 평평한 면을 아래로 하여 놓습니다. 약 40초 후, 껍데기가 열리기 전에 집게로 뒤집습니다.",
+    "step1-tip": "💡 둥근 쪽에서 국물이 튀므로, 둥근 쪽을 사람이 없는 방향으로 놓는 것이 포인트입니다.",
+    "step2-title": "2. 뒤집어서 반대면을 굽습니다",
+    "step2-desc": "뒤집은 후 2〜3분 구워서 껍데기가 열리고 굴 살이 하얗게 되면 먹을 때가 됐습니다. 껍데기가 1〜2mm밖에 열리지 않는 굴도 있지만, 같은 타이밍에 굽기 시작한 굴이 열려 있으면 먹을 수 있습니다. 계속 구우면 타버리므로 석쇠 끝 쪽에 옮기거나 접시에 올려주세요.",
+    "step3-title": "3. 껍데기를 엽니다",
+    "step3-desc": "굴의 평평한 면을 위로 하고, 뾰족한 쪽을 손으로 잡아 고정합니다. 둥근 쪽에서 껍데기 안쪽에 칼끝을 넣어 껍데기를 열고, 위 껍데기（평평한 쪽）를 분리합니다. 이때 아래 껍데기（둥근 쪽）에 굴의 감칠맛이 가득 담긴 국물이 있으니 쏟지 않도록 주의하세요.",
+    "step3-tip": "🧤 면장갑을 착용하고 화상에 주의하세요.",
+    "step4-title": "4. 관자를 잘라냅니다",
+    "step4-desc": "분리한 위 껍데기（평평한 쪽）에 살이 붙어 있으므로, 껍데기를 따라 칼을 넣어 관자를 잘라냅니다. 살이 분리되면 아래 껍데기（둥근 쪽）에 남아 있는 국물 위에 살며시 올려주세요.",
+    "step5-title": "5. 따끈따끈한 굴을 드세요！",
+    "step5-desc": "갓 구운 뜨겁고 탱글탱글한 굴을 즐겨보세요！",
     "warn-title": "⚠️ 주의사항",
-    "warn1-title": "껍데기와 국물이 매우 뜨겁습니다！",
-    "warn1-sub": "껍데기와 국물은 약 100°C에 가깝습니다. 반드시 면장갑을 착용하세요.",
-    "warn2-title": "국물이 튈 수 있습니다！",
-    "warn2-sub": "구울 때 국물이 갑자기 튀어나올 수 있습니다. 얼굴을 가까이 대지 마세요.",
-    "warn3-title": "덜 익은 굴은 드시지 마세요！",
-    "warn3-sub": "속까지 충분히 익힌 후 드세요. 식중독의 원인이 됩니다.",
-    "warn4-title": "어린이만 혼자 굽게 하지 마세요！",
-    "warn4-sub": "불·뜨거운 껍데기·칼 등 위험한 것들이 있습니다. 반드시 어른이 함께 하세요.",
-    "staff-section-title": "🙋 모를 때는",
-    "staff-warn-title": "모르면 직원을 불러주세요！",
-    "staff-warn-sub": "편하게 말씀해 주세요. 바로 도와드리겠습니다.",
+    "warn1": "굴은 충분히 익혀서 드세요.",
+    "warn2": "굴 국물과 껍데기가 튈 수 있으니 주의하세요.",
+    "warn3": "화로 주변은 매우 뜨거우니 주의하세요.",
+    "warn4": "면장갑에 뜨거운 굴 국물이 묻으면 화상을 입을 수 있습니다.",
     "staff-cta": "궁금한 점이 있으시면\n편하게 직원에게 말씀해 주세요。",
   }
 };
