@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <script>if(localStorage.getItem('lang'))document.documentElement.dataset.savedLang='1';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>牡蠣の美味しい焼き方 | How to Grill Oysters</title>
   <meta name="description" content="牡蠣の焼き方ガイド / Oyster grilling guide">
@@ -35,7 +34,7 @@
       position: fixed;
       inset: 0;
       background: linear-gradient(160deg, #0d4f6e 0%, #1a2a3a 100%);
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -314,8 +313,6 @@
       font-size: 13px;
       margin-top: 24px;
     }
-    html[data-saved-lang] .lang-overlay { display: none !important; }
-    html[data-saved-lang] .main-page { display: block !important; }
   </style>
 </head>
 <body>
@@ -609,7 +606,11 @@ function applyTranslations(lang) {
 }
 
 const savedLang = localStorage.getItem('lang');
-if (savedLang && i18n[savedLang]) setLang(savedLang);
+if (savedLang && i18n[savedLang]) {
+  setLang(savedLang);
+} else {
+  document.getElementById('langOverlay').style.display = 'flex';
+}
 </script>
 
 </body>
