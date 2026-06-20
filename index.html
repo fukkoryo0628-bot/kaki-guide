@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <script>if(localStorage.getItem('lang'))document.documentElement.dataset.savedLang='1';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>牡蠣の美味しい焼き方 | How to Grill Oysters</title>
   <meta name="description" content="牡蠣の焼き方ガイド / Oyster grilling guide">
@@ -313,6 +314,8 @@
       font-size: 13px;
       margin-top: 24px;
     }
+    html[data-saved-lang] .lang-overlay { display: none !important; }
+    html[data-saved-lang] .main-page { display: block !important; }
   </style>
 </head>
 <body>
