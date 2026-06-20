@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>サザエの焼き方 | How to Grill Turban Shell</title>
-  <meta name="description" content="サザエの焼き方ガイド / Turban shell grilling guide">
+  <title>蛤の焼き方 | How to Grill Clams</title>
   <style>
     :root {
       --ocean: #0d4f6e;
@@ -29,7 +28,6 @@
       min-height: 100vh;
     }
 
-    /* ===== LANGUAGE SELECTOR ===== */
     .lang-overlay {
       position: fixed;
       inset: 0;
@@ -57,7 +55,6 @@
       font-size: 14px;
       text-align: center;
       line-height: 1.8;
-      letter-spacing: 0.03em;
     }
 
     .lang-buttons {
@@ -76,27 +73,20 @@
       color: white;
       cursor: pointer;
       text-align: center;
-      transition: all 0.2s;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
     }
 
-    .lang-btn:active {
-      transform: scale(0.96);
-      background: rgba(255,255,255,0.22);
-    }
-
+    .lang-btn:active { transform: scale(0.96); background: rgba(255,255,255,0.22); }
     .lang-btn .flag { font-size: 36px; line-height: 1; }
     .lang-btn .lang-name { font-size: 17px; font-weight: 700; }
     .lang-btn .lang-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
 
-    /* ===== MAIN PAGE ===== */
     .main-page { display: none; }
     .main-page.active { display: block; }
 
-    /* Header */
     .header {
       background: #ffffff;
       color: var(--text);
@@ -128,22 +118,23 @@
       cursor: pointer;
     }
 
-    /* Page Nav */
     .page-nav {
       display: flex;
       border-top: 1px solid var(--border);
+      overflow-x: auto;
     }
 
     .page-nav-btn {
       flex: 1;
+      min-width: 80px;
       padding: 12px 8px;
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-mid);
       text-decoration: none;
       border-bottom: 3px solid transparent;
-      transition: all 0.2s;
+      white-space: nowrap;
     }
 
     .page-nav-btn.active {
@@ -152,7 +143,6 @@
       background: var(--ocean-pale);
     }
 
-    /* Hero */
     .hero {
       background: linear-gradient(160deg, var(--ocean) 0%, var(--ocean-light) 100%);
       color: white;
@@ -168,13 +158,8 @@
       margin-bottom: 10px;
     }
 
-    .hero p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-    }
+    .hero p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7; }
 
-    /* Section */
     .section { padding: 28px 16px 12px; }
 
     .section-title {
@@ -196,13 +181,7 @@
       border-radius: 2px;
     }
 
-    /* Step Cards */
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 16px 8px;
-    }
+    .steps { display: flex; flex-direction: column; gap: 20px; padding: 0 16px 8px; }
 
     .step-card {
       background: white;
@@ -212,38 +191,22 @@
       border: 1px solid var(--border);
     }
 
-    .step-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-    }
+    .step-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
 
     .step-img-placeholder {
       width: 100%;
       aspect-ratio: 16/9;
       background: linear-gradient(135deg, var(--ocean-pale) 0%, #d0e8f4 100%);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
     }
 
-    .step-img-placeholder .ph-text {
-      font-size: 13px;
-      color: var(--ocean);
-      font-weight: 600;
-    }
+    .step-img-placeholder .ph-text { font-size: 13px; color: var(--ocean); font-weight: 600; }
 
     .step-body { padding: 18px 18px 22px; }
 
-    .step-number-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
+    .step-number-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 
     .step-num {
       width: 34px;
@@ -259,18 +222,8 @@
       flex-shrink: 0;
     }
 
-    .step-title {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.35;
-    }
-
-    .step-desc {
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 1.85;
-    }
+    .step-title { font-size: 19px; font-weight: 800; color: var(--text); line-height: 1.35; }
+    .step-desc { font-size: 15px; color: var(--text-mid); line-height: 1.85; }
 
     .step-tip {
       margin-top: 12px;
@@ -283,13 +236,7 @@
       line-height: 1.7;
     }
 
-    /* Warning Section */
-    .warnings {
-      padding: 0 16px 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .warnings { padding: 0 16px 8px; display: flex; flex-direction: column; gap: 10px; }
 
     .warn-card {
       background: var(--red-light);
@@ -298,14 +245,8 @@
       padding: 14px 18px;
     }
 
-    .warn-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--red);
-      line-height: 1.6;
-    }
+    .warn-text { font-size: 15px; font-weight: 700; color: var(--red); line-height: 1.6; }
 
-    /* Staff CTA */
     .staff-cta {
       margin: 12px 16px 8px;
       background: var(--green-light);
@@ -315,14 +256,8 @@
       text-align: center;
     }
 
-    .staff-cta p {
-      font-size: 16px;
-      font-weight: 700;
-      color: #15803d;
-      line-height: 1.75;
-    }
+    .staff-cta p { font-size: 16px; font-weight: 700; color: #15803d; line-height: 1.75; }
 
-    /* Footer */
     .footer {
       background: var(--ocean);
       color: rgba(255,255,255,0.6);
@@ -335,10 +270,9 @@
 </head>
 <body>
 
-<!-- ===== LANGUAGE OVERLAY ===== -->
 <div class="lang-overlay" id="langOverlay">
   <h1>言語を選んでください<br>Please select your language</h1>
-  <p class="subtitle">サザエの焼き方<br>How to Grill Turban Shell<br>烤夜光螺指南 / 소라 굽기 안내</p>
+  <p class="subtitle">蛤の焼き方<br>How to Grill Clams<br>烤蛤蜊指南 / 대합 굽기 안내</p>
   <div class="lang-buttons">
     <button class="lang-btn" onclick="setLang('ja')">
       <span class="flag">🇯🇵</span>
@@ -363,7 +297,6 @@
   </div>
 </div>
 
-<!-- ===== MAIN PAGE ===== -->
 <div class="main-page" id="mainPage">
 
   <header class="header">
@@ -374,14 +307,14 @@
     </div>
     <nav class="page-nav">
       <a href="index.html" class="page-nav-btn" data-i18n="nav-kaki">カキの焼き方</a>
-      <a href="sazae.html" class="page-nav-btn active" data-i18n="nav-sazae">サザエの焼き方</a>
-      <a href="hamaguri.html" class="page-nav-btn" data-i18n="nav-hamaguri">蛤の焼き方</a>
+      <a href="sazae.html" class="page-nav-btn" data-i18n="nav-sazae">サザエの焼き方</a>
+      <a href="hamaguri.html" class="page-nav-btn active" data-i18n="nav-hamaguri">蛤の焼き方</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2 data-i18n="hero-title">サザエの焼き方</h2>
-    <p data-i18n="hero-sub">アツアツのサザエを楽しむための手順をご案内します</p>
+    <h2 data-i18n="hero-title">蛤の焼き方</h2>
+    <p data-i18n="hero-sub">アツアツの蛤を楽しむための手順をご案内します</p>
   </section>
 
   <div class="section">
@@ -390,22 +323,22 @@
   <div class="steps">
 
     <div class="step-card">
-      <img class="step-img" src="images/sazae1.jpg" alt="Step 1"
+      <img class="step-img" src="images/hamaguri1.jpg" alt="Step 1"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="step-img-placeholder" style="display:none">
-        <span class="ph-text" data-i18n="ph-step1">サザエを網の上に置く</span>
+        <span class="ph-text" data-i18n="ph-step1">蛤を網の上に置く</span>
       </div>
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">1</div>
-          <div class="step-title" data-i18n="step1-title">サザエを網の上に置く</div>
+          <div class="step-title" data-i18n="step1-title">蛤を網の上に置く</div>
         </div>
-        <p class="step-desc" data-i18n="step1-desc">サザエは尖った部分を下にして網へ置いてください。</p>
+        <p class="step-desc" data-i18n="step1-desc">蛤はそのまま網の上に置いてください。</p>
       </div>
     </div>
 
     <div class="step-card">
-      <img class="step-img" src="images/sazae2.jpg" alt="Step 2"
+      <img class="step-img" src="images/hamaguri2.jpg" alt="Step 2"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="step-img-placeholder" style="display:none">
         <span class="ph-text" data-i18n="ph-step2">加熱する</span>
@@ -415,52 +348,68 @@
           <div class="step-num">2</div>
           <div class="step-title" data-i18n="step2-title">加熱する</div>
         </div>
-        <p class="step-desc" data-i18n="step2-desc">そのまま加熱します。殻の中の汁が沸騰してきます。</p>
+        <p class="step-desc" data-i18n="step2-desc">加熱すると貝の中の汁が温まり、殻が少しずつ開いてきます。</p>
       </div>
     </div>
 
     <div class="step-card">
-      <img class="step-img" src="images/sazae3.jpg" alt="Step 3"
+      <img class="step-img" src="images/hamaguri3.jpg" alt="Step 3"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="step-img-placeholder" style="display:none">
-        <span class="ph-text" data-i18n="ph-step3">醤油を入れる</span>
+        <span class="ph-text" data-i18n="ph-step3">殻が開くのを待つ</span>
       </div>
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">3</div>
-          <div class="step-title" data-i18n="step3-title">醤油を入れる</div>
+          <div class="step-title" data-i18n="step3-title">殻が開くのを待つ</div>
         </div>
-        <p class="step-desc" data-i18n="step3-desc">汁が沸騰したら、お好みで醤油を少量入れてください。</p>
+        <p class="step-desc" data-i18n="step3-desc">殻が開き始めたら食べ頃が近づいています。無理に殻を開けないでください。</p>
+        <div class="step-tip" data-i18n="step3-tip">殻は自然に開くまで待ってください。</div>
       </div>
     </div>
 
     <div class="step-card">
-      <img class="step-img" src="images/sazae4.jpg" alt="Step 4"
+      <img class="step-img" src="images/hamaguri4.jpg" alt="Step 4"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="step-img-placeholder" style="display:none">
-        <span class="ph-text" data-i18n="ph-step4">さらに加熱する</span>
+        <span class="ph-text" data-i18n="ph-step4">醤油を入れる</span>
       </div>
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">4</div>
-          <div class="step-title" data-i18n="step4-title">さらに加熱する</div>
+          <div class="step-title" data-i18n="step4-title">醤油を入れる</div>
         </div>
-        <p class="step-desc" data-i18n="step4-desc">醤油を入れた後、2〜3分ほど加熱してください。</p>
+        <p class="step-desc" data-i18n="step4-desc">殻が開いたら、お好みで醤油を少量入れてください。</p>
       </div>
     </div>
 
     <div class="step-card">
-      <img class="step-img" src="images/sazae5.jpg" alt="Step 5"
+      <img class="step-img" src="images/hamaguri5.jpg" alt="Step 5"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="step-img-placeholder" style="display:none">
-        <span class="ph-text" data-i18n="ph-step5">完成</span>
+        <span class="ph-text" data-i18n="ph-step5">さらに加熱する</span>
       </div>
       <div class="step-body">
         <div class="step-number-row">
           <div class="step-num">5</div>
-          <div class="step-title" data-i18n="step5-title">完成</div>
+          <div class="step-title" data-i18n="step5-title">さらに加熱する</div>
         </div>
-        <p class="step-desc" data-i18n="step5-desc">十分に加熱できたらお召し上がりください。</p>
+        <p class="step-desc" data-i18n="step5-desc">醤油を入れた後、30秒〜1分ほど加熱してください。</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img class="step-img" src="images/hamaguri6.jpg" alt="Step 6"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="step-img-placeholder" style="display:none">
+        <span class="ph-text" data-i18n="ph-step6">完成</span>
+      </div>
+      <div class="step-body">
+        <div class="step-number-row">
+          <div class="step-num">6</div>
+          <div class="step-title" data-i18n="step6-title">完成</div>
+        </div>
+        <p class="step-desc" data-i18n="step6-desc">十分に加熱できたらお召し上がりください。</p>
       </div>
     </div>
 
@@ -470,18 +419,11 @@
     <div class="section-title" data-i18n="warn-title">ご注意ください</div>
   </div>
   <div class="warnings">
-    <div class="warn-card">
-      <div class="warn-text" data-i18n="warn1">殻や汁は非常に熱くなります。</div>
-    </div>
-    <div class="warn-card">
-      <div class="warn-text" data-i18n="warn2">汁が飛ぶ場合があります。</div>
-    </div>
-    <div class="warn-card">
-      <div class="warn-text" data-i18n="warn3">十分に加熱してからお召し上がりください。</div>
-    </div>
-    <div class="warn-card">
-      <div class="warn-text" data-i18n="warn4">やけどにご注意ください。</div>
-    </div>
+    <div class="warn-card"><div class="warn-text" data-i18n="warn1">殻が開く際に汁が飛ぶことがあります。</div></div>
+    <div class="warn-card"><div class="warn-text" data-i18n="warn2">殻や汁は非常に熱くなります。</div></div>
+    <div class="warn-card"><div class="warn-text" data-i18n="warn3">無理に殻を開けないでください。</div></div>
+    <div class="warn-card"><div class="warn-text" data-i18n="warn4">十分に加熱してからお召し上がりください。</div></div>
+    <div class="warn-card"><div class="warn-text" data-i18n="warn5">やけどにご注意ください。</div></div>
   </div>
 
   <div class="staff-cta">
@@ -497,127 +439,83 @@
 <script>
 const i18n = {
   ja: {
-    "header-title": "アクアマリン糸島",
-    "lang-btn": "言語",
-    "nav-kaki": "カキの焼き方",
-    "nav-sazae": "サザエの焼き方",
-    "nav-hamaguri": "蛤の焼き方",
-    "hero-title": "サザエの焼き方",
-    "hero-sub": "アツアツのサザエを楽しむための手順をご案内します",
+    "header-title": "アクアマリン糸島", "lang-btn": "言語",
+    "nav-kaki": "カキの焼き方", "nav-sazae": "サザエの焼き方", "nav-hamaguri": "蛤の焼き方",
+    "hero-title": "蛤の焼き方",
+    "hero-sub": "アツアツの蛤を楽しむための手順をご案内します",
     "steps-title": "焼き方の手順",
-    "step1-title": "サザエを網の上に置く",
-    "step1-desc": "サザエは尖った部分を下にして網へ置いてください。",
-    "ph-step1": "サザエを網の上に置く",
-    "step2-title": "加熱する",
-    "step2-desc": "そのまま加熱します。殻の中の汁が沸騰してきます。",
-    "ph-step2": "加熱する",
-    "step3-title": "醤油を入れる",
-    "step3-desc": "汁が沸騰したら、お好みで醤油を少量入れてください。",
-    "ph-step3": "醤油を入れる",
-    "step4-title": "さらに加熱する",
-    "step4-desc": "醤油を入れた後、2〜3分ほど加熱してください。",
-    "ph-step4": "さらに加熱する",
-    "step5-title": "完成",
-    "step5-desc": "十分に加熱できたらお召し上がりください。",
-    "ph-step5": "完成",
+    "step1-title": "蛤を網の上に置く", "step1-desc": "蛤はそのまま網の上に置いてください。", "ph-step1": "蛤を網の上に置く",
+    "step2-title": "加熱する", "step2-desc": "加熱すると貝の中の汁が温まり、殻が少しずつ開いてきます。", "ph-step2": "加熱する",
+    "step3-title": "殻が開くのを待つ", "step3-desc": "殻が開き始めたら食べ頃が近づいています。無理に殻を開けないでください。", "step3-tip": "殻は自然に開くまで待ってください。", "ph-step3": "殻が開くのを待つ",
+    "step4-title": "醤油を入れる", "step4-desc": "殻が開いたら、お好みで醤油を少量入れてください。", "ph-step4": "醤油を入れる",
+    "step5-title": "さらに加熱する", "step5-desc": "醤油を入れた後、30秒〜1分ほど加熱してください。", "ph-step5": "さらに加熱する",
+    "step6-title": "完成", "step6-desc": "十分に加熱できたらお召し上がりください。", "ph-step6": "完成",
     "warn-title": "ご注意ください",
-    "warn1": "殻や汁は非常に熱くなります。",
-    "warn2": "汁が飛ぶ場合があります。",
-    "warn3": "十分に加熱してからお召し上がりください。",
-    "warn4": "やけどにご注意ください。",
+    "warn1": "殻が開く際に汁が飛ぶことがあります。",
+    "warn2": "殻や汁は非常に熱くなります。",
+    "warn3": "無理に殻を開けないでください。",
+    "warn4": "十分に加熱してからお召し上がりください。",
+    "warn5": "やけどにご注意ください。",
     "staff-cta": "ご不明な点がございましたら、\nスタッフまでお気軽にお声かけください。",
   },
   en: {
-    "header-title": "Aquamarine Itoshima",
-    "lang-btn": "Language",
-    "nav-kaki": "Grilled Oysters",
-    "nav-sazae": "Grilled Turban Shell",
-    "nav-hamaguri": "Grilled Clams",
-    "hero-title": "How to Grill Turban Shell",
-    "hero-sub": "Follow these steps to enjoy hot, freshly grilled turban shell",
+    "header-title": "Aquamarine Itoshima", "lang-btn": "Language",
+    "nav-kaki": "Grilled Oysters", "nav-sazae": "Grilled Turban Shell", "nav-hamaguri": "Grilled Clams",
+    "hero-title": "How to Grill Clams",
+    "hero-sub": "Follow these steps to enjoy hot, freshly grilled clams",
     "steps-title": "Grilling Steps",
-    "step1-title": "Place the turban shell on the grill",
-    "step1-desc": "Place the turban shell with the pointed end facing down on the grill.",
-    "ph-step1": "Place on grill",
-    "step2-title": "Heat it up",
-    "step2-desc": "Heat it as is. The juice inside the shell will start to boil.",
-    "ph-step2": "Heat it up",
-    "step3-title": "Add soy sauce",
-    "step3-desc": "Once the juice boils, add a small amount of soy sauce to taste.",
-    "ph-step3": "Add soy sauce",
-    "step4-title": "Continue heating",
-    "step4-desc": "After adding soy sauce, heat for another 2–3 minutes.",
-    "ph-step4": "Continue heating",
-    "step5-title": "Ready to eat!",
-    "step5-desc": "Once fully heated, enjoy your turban shell!",
-    "ph-step5": "Ready to eat",
+    "step1-title": "Place the clams on the grill", "step1-desc": "Place the clams directly on the grill as they are.", "ph-step1": "Place on grill",
+    "step2-title": "Heat it up", "step2-desc": "As it heats up, the juice inside warms and the shell will slowly begin to open.", "ph-step2": "Heat it up",
+    "step3-title": "Wait for the shell to open", "step3-desc": "When the shell starts to open, it's almost ready. Do not force the shell open.", "step3-tip": "Wait until the shell opens naturally.", "ph-step3": "Wait for shell to open",
+    "step4-title": "Add soy sauce", "step4-desc": "Once the shell opens, add a small amount of soy sauce to taste.", "ph-step4": "Add soy sauce",
+    "step5-title": "Continue heating", "step5-desc": "After adding soy sauce, heat for another 30 seconds to 1 minute.", "ph-step5": "Continue heating",
+    "step6-title": "Ready to eat!", "step6-desc": "Once fully heated, enjoy your clams!", "ph-step6": "Ready to eat",
     "warn-title": "Important Warnings",
-    "warn1": "The shell and juice become extremely hot.",
-    "warn2": "Juice may splatter.",
-    "warn3": "Please eat only after heating thoroughly.",
-    "warn4": "Be careful of burns.",
+    "warn1": "Juice may splatter when the shell opens.",
+    "warn2": "Shells and juice become extremely hot.",
+    "warn3": "Do not force the shell open.",
+    "warn4": "Please eat only after heating thoroughly.",
+    "warn5": "Be careful of burns.",
     "staff-cta": "If you have any questions,\nplease feel free to ask a staff member.",
   },
   zh: {
-    "header-title": "水蓝糸岛",
-    "lang-btn": "语言",
-    "nav-kaki": "烤牡蛎",
-    "nav-sazae": "烤夜光螺",
-    "nav-hamaguri": "烤蛤蜊",
-    "hero-title": "烤夜光螺的方法",
-    "hero-sub": "按照以下步骤，享用热乎乎的烤夜光螺",
+    "header-title": "水蓝糸岛", "lang-btn": "语言",
+    "nav-kaki": "烤牡蛎", "nav-sazae": "烤夜光螺", "nav-hamaguri": "烤蛤蜊",
+    "hero-title": "烤蛤蜊的方法",
+    "hero-sub": "按照以下步骤，享用热乎乎的烤蛤蜊",
     "steps-title": "烧烤步骤",
-    "step1-title": "将夜光螺放在烤网上",
-    "step1-desc": "将夜光螺尖端朝下放置在烤架上。",
-    "ph-step1": "放在烤网上",
-    "step2-title": "加热",
-    "step2-desc": "直接加热。壳内的汁水会开始沸腾。",
-    "ph-step2": "加热",
-    "step3-title": "加入酱油",
-    "step3-desc": "汁水沸腾后，根据口味加入少量酱油。",
-    "ph-step3": "加入酱油",
-    "step4-title": "继续加热",
-    "step4-desc": "加入酱油后，继续加热2〜3分钟。",
-    "ph-step4": "继续加热",
-    "step5-title": "完成！",
-    "step5-desc": "充分加热后即可享用！",
-    "ph-step5": "完成",
+    "step1-title": "将蛤蜊放在烤网上", "step1-desc": "将蛤蜊直接放在烤架上即可。", "ph-step1": "放在烤网上",
+    "step2-title": "加热", "step2-desc": "加热后，壳内的汁水会变热，贝壳会慢慢打开。", "ph-step2": "加热",
+    "step3-title": "等待贝壳打开", "step3-desc": "贝壳开始打开时说明快熟了。请不要强行打开贝壳。", "step3-tip": "请等待贝壳自然打开。", "ph-step3": "等待贝壳打开",
+    "step4-title": "加入酱油", "step4-desc": "贝壳打开后，根据口味加入少量酱油。", "ph-step4": "加入酱油",
+    "step5-title": "继续加热", "step5-desc": "加入酱油后，继续加热30秒〜1分钟。", "ph-step5": "继续加热",
+    "step6-title": "完成！", "step6-desc": "充分加热后即可享用！", "ph-step6": "完成",
     "warn-title": "注意事项",
-    "warn1": "壳和汁水会变得非常热。",
-    "warn2": "汁水可能会飞溅。",
-    "warn3": "请充分加热后再食用。",
-    "warn4": "请注意烫伤。",
+    "warn1": "贝壳打开时汁水可能飞溅。",
+    "warn2": "壳和汁水会变得非常热。",
+    "warn3": "请不要强行打开贝壳。",
+    "warn4": "请充分加热后再食用。",
+    "warn5": "请注意烫伤。",
     "staff-cta": "如有任何疑问，\n请随时向工作人员咨询。",
   },
   ko: {
-    "header-title": "아쿠아마린 이토시마",
-    "lang-btn": "언어",
-    "nav-kaki": "굴 굽기",
-    "nav-sazae": "소라 굽기",
-    "nav-hamaguri": "대합 굽기",
-    "hero-title": "소라 굽는 법",
-    "hero-sub": "따끈따끈한 소라를 즐기기 위한 순서를 안내해 드립니다",
+    "header-title": "아쿠아마린 이토시마", "lang-btn": "언어",
+    "nav-kaki": "굴 굽기", "nav-sazae": "소라 굽기", "nav-hamaguri": "대합 굽기",
+    "hero-title": "대합 굽는 법",
+    "hero-sub": "따끈따끈한 대합을 즐기기 위한 순서를 안내해 드립니다",
     "steps-title": "굽는 순서",
-    "step1-title": "소라를 석쇠 위에 올리세요",
-    "step1-desc": "소라의 뾰족한 부분이 아래로 향하도록 석쇠에 올려주세요.",
-    "ph-step1": "석쇠에 올리기",
-    "step2-title": "가열하세요",
-    "step2-desc": "그대로 가열합니다. 껍데기 안의 국물이 끓어오릅니다.",
-    "ph-step2": "가열하기",
-    "step3-title": "간장을 넣으세요",
-    "step3-desc": "국물이 끓어오르면 기호에 따라 간장을 조금 넣어주세요.",
-    "ph-step3": "간장 넣기",
-    "step4-title": "계속 가열하세요",
-    "step4-desc": "간장을 넣은 후 2〜3분 더 가열해주세요.",
-    "ph-step4": "계속 가열하기",
-    "step5-title": "완성！",
-    "step5-desc": "충분히 가열되면 드세요.",
-    "ph-step5": "완성",
+    "step1-title": "대합을 석쇠 위에 올리세요", "step1-desc": "대합을 그대로 석쇠 위에 올려주세요.", "ph-step1": "석쇠에 올리기",
+    "step2-title": "가열하세요", "step2-desc": "가열하면 조개 안의 국물이 따뜻해지면서 껍데기가 서서히 열립니다.", "ph-step2": "가열하기",
+    "step3-title": "껍데기가 열리기를 기다리세요", "step3-desc": "껍데기가 열리기 시작하면 먹을 때가 가까워진 것입니다. 억지로 껍데기를 열지 마세요.", "step3-tip": "껍데기가 자연스럽게 열릴 때까지 기다려주세요.", "ph-step3": "껍데기 열리기를 기다리기",
+    "step4-title": "간장을 넣으세요", "step4-desc": "껍데기가 열리면 기호에 따라 간장을 조금 넣어주세요.", "ph-step4": "간장 넣기",
+    "step5-title": "계속 가열하세요", "step5-desc": "간장을 넣은 후 30초〜1분 더 가열해주세요.", "ph-step5": "계속 가열하기",
+    "step6-title": "완성！", "step6-desc": "충분히 가열되면 드세요.", "ph-step6": "완성",
     "warn-title": "주의사항",
-    "warn1": "껍데기와 국물은 매우 뜨거워집니다.",
-    "warn2": "국물이 튈 수 있습니다.",
-    "warn3": "충분히 가열한 후에 드세요.",
-    "warn4": "화상에 주의하세요.",
+    "warn1": "껍데기가 열릴 때 국물이 튈 수 있습니다.",
+    "warn2": "껍데기와 국물은 매우 뜨거워집니다.",
+    "warn3": "억지로 껍데기를 열지 마세요.",
+    "warn4": "충분히 가열한 후에 드세요.",
+    "warn5": "화상에 주의하세요.",
     "staff-cta": "궁금한 점이 있으시면\n편하게 직원에게 말씀해 주세요.",
   }
 };
@@ -640,13 +538,10 @@ function applyTranslations(lang) {
   const t = i18n[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) {
-      el.innerHTML = t[key].replace(/\n/g, '<br>');
-    }
+    if (t[key] !== undefined) el.innerHTML = t[key].replace(/\n/g, '<br>');
   });
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
 }
 </script>
-
 </body>
 </html>
