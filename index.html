@@ -98,12 +98,13 @@
 
     /* Header */
     .header {
-      background: var(--ocean);
-      color: white;
+      background: #ffffff;
+      color: var(--text);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      border-bottom: 1px solid var(--border);
     }
 
     .header-inner {
@@ -117,8 +118,8 @@
     .header-title { font-size: 16px; font-weight: 700; letter-spacing: 0.03em; }
 
     .lang-switch-btn {
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
+      background: var(--ocean);
+      border: 1px solid var(--ocean);
       color: white;
       border-radius: 8px;
       padding: 7px 14px;
